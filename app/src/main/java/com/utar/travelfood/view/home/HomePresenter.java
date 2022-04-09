@@ -2,6 +2,8 @@ package com.utar.travelfood.view.home;
 
 
 
+import android.util.Log;
+
 import androidx.annotation.NonNull;
 
 import com.utar.travelfood.Utils;
@@ -29,9 +31,7 @@ class HomePresenter {
             @Override
             public void onResponse(@NonNull Call<Meals> call, @NonNull Response<Meals> response) {
                 view.hideLoading();
-
                 if (response.isSuccessful() && response.body() != null) {
-
                     view.setMeal(response.body().getMeals());
 
                 }
@@ -61,7 +61,6 @@ class HomePresenter {
                 view.hideLoading(); //hide loading when received response
 
                 if (response.isSuccessful() && response.body() != null) {
-
                     view.setCategory(response.body().getCategories());
 
                 }
