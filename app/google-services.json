@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "467439245012",
+    "project_id": "travelfood-de9f0",
+    "storage_bucket": "travelfood-de9f0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:467439245012:android:702155eac9813d96524d41",
+        "android_client_info": {
+          "package_name": "com.utar.travelfood"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "467439245012-hdrhsmkhkhh9giiokirqs2qf13hc4rea.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAEh6JbsSJFPOLcHVU1Ardir0tqRCM401c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "467439245012-hdrhsmkhkhh9giiokirqs2qf13hc4rea.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
