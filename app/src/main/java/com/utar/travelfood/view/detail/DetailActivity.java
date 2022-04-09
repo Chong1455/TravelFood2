@@ -142,6 +142,7 @@ public class DetailActivity extends AppCompatActivity implements DetailView{
                 //FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                 //String uid = user.getUid();
                 DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
+                Log.i("a", "hello");
                 favouriteFoodArray.add(mealName);
                 mDatabase.child("users").child("favouriteFood").setValue(favouriteFoodArray);
                 Log.i("its me", "data added");
