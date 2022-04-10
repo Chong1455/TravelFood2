@@ -1,10 +1,12 @@
 package com.utar.travelfood.adapter;
 
 import android.content.Context;
+import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -13,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.utar.travelfood.R;
 import com.utar.travelfood.model.Meals;
 import com.squareup.picasso.Picasso;
+import com.utar.travelfood.view.home.HomeActivity;
 
 import java.util.List;
 
@@ -39,12 +42,19 @@ public class RecyclerViewMealByCategory extends RecyclerView.Adapter<RecyclerVie
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerViewMealByCategory.RecyclerViewHolder viewHolder, int i) {
-
         String strMealThumb = meals.get(i).getStrMealThumb();
         Picasso.get().load(strMealThumb).placeholder(R.drawable.shadow_bottom_to_top).into(viewHolder.mealThumb);
-
         String strMealName = meals.get(i).getStrMeal();
         viewHolder.mealName.setText(strMealName);
+
+        if (HomeActivity.favouriteFoodArray.size() > 0) {
+            // If meal name is in favouriteFoodArray, update the icon
+            for (String food : HomeActivity.favouriteFoodArray) {
+                if (food.equals(meals.get(i).getStrMeal())) {
+                    Picasso.get().load(R.drawable.ic_favorite).placeholder(R.drawable.ic_favorite).into(viewHolder.love);
+                }
+            }
+        }
     }
 
     @Override
@@ -55,6 +65,8 @@ public class RecyclerViewMealByCategory extends RecyclerView.Adapter<RecyclerVie
     static class RecyclerViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         @BindView(R.id.mealThumb)
         ImageView mealThumb;
+        @BindView(R.id.love)
+        ImageView love;
         @BindView(R.id.mealName)
         TextView mealName;
         RecyclerViewHolder(@NonNull View itemView) {

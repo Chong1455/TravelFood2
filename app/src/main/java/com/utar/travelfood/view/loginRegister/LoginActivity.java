@@ -34,7 +34,6 @@ public class LoginActivity extends AppCompatActivity {
     Button registerButton;
     ProgressBar progressBar;
     private FirebaseAuth mAuth = FirebaseAuth.getInstance();
-    ;
     SharedPreferences sharedPreferences;
 
     @Override
@@ -42,11 +41,11 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         // Auto login
-//        sharedPreferences = this.getSharedPreferences("my.edu.utar.travelfood", Context.MODE_PRIVATE);
-//        if (sharedPreferences.getBoolean("loginState", false)) {
-//            Intent intent = new Intent(this, MainActivity.class);
-//            startActivity(intent);
-//        }
+        sharedPreferences = this.getSharedPreferences("com.utar.travelfood", Context.MODE_PRIVATE);
+        if (sharedPreferences.getBoolean("loginState", false)) {
+            Intent intent = new Intent(this, HomeActivity.class);
+            startActivity(intent);
+        }
 
         setContentView(R.layout.activity_login);
 
@@ -111,7 +110,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void performLogin() {
-        //sharedPreferences.edit().putBoolean("loginState", true).apply();
+        sharedPreferences.edit().putBoolean("loginState", true).apply();
 
         emailEditText.setEnabled(false);
         passwordEditText.setEnabled(false);

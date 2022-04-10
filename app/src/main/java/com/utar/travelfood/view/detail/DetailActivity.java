@@ -6,7 +6,6 @@ import android.graphics.drawable.Drawable;
 
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -30,14 +29,13 @@ import com.utar.travelfood.R;
 import com.utar.travelfood.Utils;
 import com.utar.travelfood.model.Meals;
 import com.squareup.picasso.Picasso;
+import com.utar.travelfood.view.home.HomeActivity;
 
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 
 import static com.utar.travelfood.view.home.HomeActivity.EXTRA_DETAIL;
-
-import java.util.ArrayList;
 
 public class DetailActivity extends AppCompatActivity implements DetailView{
 
@@ -78,7 +76,7 @@ public class DetailActivity extends AppCompatActivity implements DetailView{
     TextView source;
 
     String mealName;
-    ArrayList<String> favouriteFoodArray = new ArrayList<String>();
+
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -128,6 +126,11 @@ public class DetailActivity extends AppCompatActivity implements DetailView{
         MenuItem favoriteItem = menu.findItem(R.id.favorite);
         Drawable favoriteItemColor = favoriteItem.getIcon();
         setupColorActionBarIcon(favoriteItemColor);
+        for (String food : HomeActivity.favouriteFoodArray) {
+            if (food.equals(mealName)) {
+                favoriteItem.setIcon(R.drawable.ic_favorite);
+            }
+        }
         return true;
     }
 
@@ -137,15 +140,20 @@ public class DetailActivity extends AppCompatActivity implements DetailView{
             case android.R.id.home :
                 onBackPressed();
                 return true;
-            case R.id.favorite:
-                Log.i("its me", "Click!!!");
-                //FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-                //String uid = user.getUid();
+            case R.id.favorite: // User clicks on add favourite
+                // Get firebase user id
+                FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+                String uid = user.getUid();
+
+                // Add meal name to array
+                HomeActivity.favouriteFoodArray.add(mealName);
+
+                // Add array to firebase
                 DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
-                Log.i("a", "hello");
-                favouriteFoodArray.add(mealName);
-                mDatabase.child("users").child("favouriteFood").setValue(favouriteFoodArray);
-                Log.i("its me", "data added");
+                mDatabase.child("users").child("favouriteFood").child(uid).setValue(HomeActivity.favouriteFoodArray);
+
+                // Set to favourite icon
+                item.setIcon(R.drawable.ic_favorite);
                 return true;
 
             default:
