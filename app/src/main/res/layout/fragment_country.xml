@@ -21,6 +21,7 @@
                 android:layout_margin="12dp"
                 app:cardCornerRadius="10dp"
                 app:cardBackgroundColor="@color/colorPrimary"
+<<<<<<< HEAD
                 android:foreground="?attr/selectableItemBackground">
                 <RelativeLayout
                     android:layout_width="match_parent"
@@ -37,6 +38,9 @@
                         android:text="@string/country"/>
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
+=======
+                android:foreground="?attr/selectableItemBackground"/>
+>>>>>>> 3ff18495a18847bde44cc26fdbdce0fad998610d
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/recyclerView"

@@ -21,15 +21,21 @@ import androidx.core.view.ViewCompat;
 
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.CollapsingToolbarLayout;
+<<<<<<< HEAD
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+=======
+>>>>>>> 3ff18495a18847bde44cc26fdbdce0fad998610d
 import com.utar.travelfood.R;
 import com.utar.travelfood.Utils;
 import com.utar.travelfood.model.Meals;
 import com.squareup.picasso.Picasso;
+<<<<<<< HEAD
 import com.utar.travelfood.view.home.HomeActivity;
+=======
+>>>>>>> 3ff18495a18847bde44cc26fdbdce0fad998610d
 
 
 import butterknife.BindView;
@@ -74,9 +80,12 @@ public class DetailActivity extends AppCompatActivity implements DetailView{
     
     @BindView(R.id.source)
     TextView source;
+<<<<<<< HEAD
 
     String mealName;
 
+=======
+>>>>>>> 3ff18495a18847bde44cc26fdbdce0fad998610d
     
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -87,7 +96,11 @@ public class DetailActivity extends AppCompatActivity implements DetailView{
         setupActionBar();
 
         Intent intent = getIntent();
+<<<<<<< HEAD
         mealName = intent.getStringExtra(EXTRA_DETAIL);
+=======
+        String mealName = intent.getStringExtra(EXTRA_DETAIL);
+>>>>>>> 3ff18495a18847bde44cc26fdbdce0fad998610d
 
         DetailPresenter presenter = new DetailPresenter(this);
         presenter.getMealById(mealName);
@@ -126,11 +139,14 @@ public class DetailActivity extends AppCompatActivity implements DetailView{
         MenuItem favoriteItem = menu.findItem(R.id.favorite);
         Drawable favoriteItemColor = favoriteItem.getIcon();
         setupColorActionBarIcon(favoriteItemColor);
+<<<<<<< HEAD
         for (String food : HomeActivity.favouriteFoodArray) {
             if (food.equals(mealName)) {
                 favoriteItem.setIcon(R.drawable.ic_favorite);
             }
         }
+=======
+>>>>>>> 3ff18495a18847bde44cc26fdbdce0fad998610d
         return true;
     }
 
@@ -140,6 +156,7 @@ public class DetailActivity extends AppCompatActivity implements DetailView{
             case android.R.id.home :
                 onBackPressed();
                 return true;
+<<<<<<< HEAD
             case R.id.favorite: // User clicks on add favourite
                 // Get firebase user id
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
@@ -156,6 +173,8 @@ public class DetailActivity extends AppCompatActivity implements DetailView{
                 item.setIcon(R.drawable.ic_favorite);
                 return true;
 
+=======
+>>>>>>> 3ff18495a18847bde44cc26fdbdce0fad998610d
             default:
                 return super.onOptionsItemSelected(item);
         }

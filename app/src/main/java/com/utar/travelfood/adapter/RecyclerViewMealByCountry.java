@@ -32,13 +32,21 @@ public class RecyclerViewMealByCountry extends RecyclerView.Adapter<RecyclerView
 
     @NonNull
     @Override
+<<<<<<< HEAD
     public RecyclerViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+=======
+    public RecyclerViewMealByCountry.RecyclerViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+>>>>>>> 3ff18495a18847bde44cc26fdbdce0fad998610d
         View view = LayoutInflater.from(context).inflate(R.layout.item_recycler_food, viewGroup, false);
         return new RecyclerViewHolder(view);
     }
 
     @Override
+<<<<<<< HEAD
     public void onBindViewHolder(@NonNull RecyclerViewHolder viewHolder, int i) {
+=======
+    public void onBindViewHolder(@NonNull RecyclerViewMealByCountry.RecyclerViewHolder viewHolder, int i) {
+>>>>>>> 3ff18495a18847bde44cc26fdbdce0fad998610d
 
         String strMealThumb = meals.get(i).getStrMealThumb();
         Picasso.get().load(strMealThumb).placeholder(R.drawable.shadow_bottom_to_top).into(viewHolder.mealThumb);

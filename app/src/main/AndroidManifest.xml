@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+<<<<<<< HEAD
             android:name=".view.loginRegister.RegisterActivity"
             android:exported="false" />
         <activity
@@ -25,6 +26,11 @@
             </intent-filter>
         </activity>
         <activity
+=======
+            android:name=".view.search.SearchActivity"
+            android:exported="false" />
+        <activity
+>>>>>>> 3ff18495a18847bde44cc26fdbdce0fad998610d
             android:name=".adapter.RecyclerViewHome1Adapter"
             android:exported="false" />
         <activity
@@ -38,7 +44,18 @@
             android:exported="false" />
         <activity
             android:name=".view.home.HomeActivity"
+<<<<<<< HEAD
             android:theme="@style/AppTheme"/>
+=======
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+>>>>>>> 3ff18495a18847bde44cc26fdbdce0fad998610d
         <activity
             android:name=".view.category.CategoryActivity"
             android:label="Category"

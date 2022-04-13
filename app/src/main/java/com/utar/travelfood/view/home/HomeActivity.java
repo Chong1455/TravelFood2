@@ -9,16 +9,23 @@ package com.utar.travelfood.view.home;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
+<<<<<<< HEAD
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+=======
+import android.view.View;
+import android.widget.ImageButton;
+
+>>>>>>> 3ff18495a18847bde44cc26fdbdce0fad998610d
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+<<<<<<< HEAD
 import androidx.viewpager.widget.ViewPager;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -30,11 +37,19 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.GenericTypeIndicator;
+=======
+
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
+>>>>>>> 3ff18495a18847bde44cc26fdbdce0fad998610d
 import com.utar.travelfood.R;
 import com.utar.travelfood.Utils;
 import com.utar.travelfood.adapter.RecyclerViewHome1Adapter;
 import com.utar.travelfood.adapter.RecyclerViewHomeAdapter;
+<<<<<<< HEAD
 import com.utar.travelfood.adapter.ViewPagerHeaderAdapter;
+=======
+>>>>>>> 3ff18495a18847bde44cc26fdbdce0fad998610d
 import com.utar.travelfood.model.Categories;
 import com.utar.travelfood.model.Meals;
 import com.utar.travelfood.view.category.CategoryActivity;
@@ -42,7 +57,10 @@ import com.utar.travelfood.view.country.CountryActivity;
 import com.utar.travelfood.view.detail.DetailActivity;
 
 import java.io.Serializable;
+<<<<<<< HEAD
 import java.util.ArrayList;
+=======
+>>>>>>> 3ff18495a18847bde44cc26fdbdce0fad998610d
 import java.util.List;
 
 import butterknife.BindView;
@@ -54,16 +72,26 @@ public class HomeActivity extends AppCompatActivity implements HomeView {
     public static final String EXTRA_CATEGORY = "category";
     public static final String EXTRA_POSITION = "position";
     public static final String EXTRA_DETAIL = "detail";
+<<<<<<< HEAD
     private ImageButton search;
 
     public static ArrayList<String> favouriteFoodArray = new ArrayList<>();
 
     @BindView(R.id.viewPagerHeader)
     ViewPager viewPagerMeal;
+=======
+
+
+>>>>>>> 3ff18495a18847bde44cc26fdbdce0fad998610d
     @BindView(R.id.recyclerCategory)
     RecyclerView recyclerViewCategory;
     @BindView(R.id.recyclerCountry)
     RecyclerView recyclerViewCountry;
+<<<<<<< HEAD
+=======
+    @BindView(R.id.imageButton)
+    ImageButton search;
+>>>>>>> 3ff18495a18847bde44cc26fdbdce0fad998610d
 
     HomePresenter presenter;
 
@@ -73,6 +101,7 @@ public class HomeActivity extends AppCompatActivity implements HomeView {
         setContentView(R.layout.home_page);
         ButterKnife.bind(this);
 
+<<<<<<< HEAD
         // Get firebase user id
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
         String uid = user.getUid();
@@ -97,37 +126,56 @@ public class HomeActivity extends AppCompatActivity implements HomeView {
         });
 
         search = (ImageButton)findViewById(R.id.imageButton);
+=======
+>>>>>>> 3ff18495a18847bde44cc26fdbdce0fad998610d
 
         search.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+<<<<<<< HEAD
                 TextInputLayout textInputLayout = view.findViewById(R.id.search_input);
                 Editable searchinput = textInputLayout.getEditText().getText();
                 Intent intent = new Intent(getApplicationContext(), DetailActivity.class);
                 intent.putExtra(EXTRA_DETAIL,searchinput.toString());
+=======
+                TextInputEditText EditText = findViewById(R.id.search_input);
+                String searchinput = EditText.getText().toString();
+                Intent intent = new Intent(getApplicationContext(), DetailActivity.class);
+                intent.putExtra(EXTRA_DETAIL, searchinput);
+>>>>>>> 3ff18495a18847bde44cc26fdbdce0fad998610d
                 startActivity(intent);
             }
         });
 
         presenter = new HomePresenter(this);
+<<<<<<< HEAD
         presenter.getMeals();
+=======
+>>>>>>> 3ff18495a18847bde44cc26fdbdce0fad998610d
         presenter.getCategories();
         presenter.getCountries();
     }
 
     @Override
     public void showLoading() {
+<<<<<<< HEAD
         findViewById(R.id.shimmerMeal).setVisibility(View.VISIBLE);
+=======
+>>>>>>> 3ff18495a18847bde44cc26fdbdce0fad998610d
         findViewById(R.id.shimmerCategory).setVisibility(View.VISIBLE);
     }
 
     @Override
     public void hideLoading() {
+<<<<<<< HEAD
         findViewById(R.id.shimmerMeal).setVisibility(View.GONE);
+=======
+>>>>>>> 3ff18495a18847bde44cc26fdbdce0fad998610d
         findViewById(R.id.shimmerCategory).setVisibility(View.GONE);
     }
 
     @Override
+<<<<<<< HEAD
     public void setMeal(List<Meals.Meal> meal) {
         ViewPagerHeaderAdapter headerAdapter = new ViewPagerHeaderAdapter(meal, this);
         viewPagerMeal.setAdapter(headerAdapter);
@@ -143,6 +191,8 @@ public class HomeActivity extends AppCompatActivity implements HomeView {
     }
 
     @Override
+=======
+>>>>>>> 3ff18495a18847bde44cc26fdbdce0fad998610d
     public void setCategory(List<Categories.Category> category) {
         RecyclerViewHomeAdapter homeAdapter = new RecyclerViewHomeAdapter(category, this);
         recyclerViewCategory.setAdapter(homeAdapter);

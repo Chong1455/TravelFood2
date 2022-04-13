@@ -20,6 +20,7 @@ class HomePresenter {
         this.view = view;
     }
 
+<<<<<<< HEAD
     void getMeals() {
 
         view.showLoading();
@@ -48,6 +49,8 @@ class HomePresenter {
         });
     }
 
+=======
+>>>>>>> 3ff18495a18847bde44cc26fdbdce0fad998610d
 
     void getCategories() {
 
