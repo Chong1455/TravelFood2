@@ -39,11 +39,8 @@ public class CountryFragment extends Fragment implements CountryView {
     RecyclerView recyclerView;
     @BindView(R.id.progressBar)
     ProgressBar progressBar;
-<<<<<<< HEAD
     @BindView(R.id.textCountry)
     TextView textCountry;
-=======
->>>>>>> 3ff18495a18847bde44cc26fdbdce0fad998610d
     
     AlertDialog.Builder descDialog;
 
@@ -60,10 +57,7 @@ public class CountryFragment extends Fragment implements CountryView {
         super.onViewCreated(view, savedInstanceState);
 
         if (getArguments() != null) {
-<<<<<<< HEAD
             textCountry.setText(getArguments().getString("EXTRA_DATA_DESC"));
-=======
->>>>>>> 3ff18495a18847bde44cc26fdbdce0fad998610d
 
             descDialog = new AlertDialog.Builder(getActivity())
                     .setTitle(getArguments().getString("EXTRA_DATA_NAME"));

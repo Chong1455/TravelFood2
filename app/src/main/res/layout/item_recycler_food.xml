@@ -22,22 +22,18 @@
             android:src="@drawable/sample_food_image"
             android:layout_width="match_parent"
             android:layout_height="150dp"/>
-<<<<<<< HEAD
-
         <View
             android:layout_width="130dp"
             android:layout_height="90dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
             android:background="@drawable/shadow_for_love_white" />
-=======
         <View
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
             android:background="@drawable/shadow_for_love_white"
             android:layout_width="130dp"
             android:layout_height="90dp"/>
->>>>>>> 3ff18495a18847bde44cc26fdbdce0fad998610d
         <ImageView
             android:id="@+id/love"
             android:tint="@color/colorAccent"

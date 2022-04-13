@@ -58,7 +58,7 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
-<<<<<<< HEAD
+
     implementation platform('com.google.firebase:firebase-bom:29.0.3')
     implementation 'com.google.firebase:firebase-auth-ktx'
     implementation 'com.google.firebase:firebase-storage-ktx'
@@ -66,6 +66,3 @@ dependencies {
 }
 
 apply plugin: 'com.google.gms.google-services'
-=======
-}
->>>>>>> 3ff18495a18847bde44cc26fdbdce0fad998610d

@@ -6,11 +6,6 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/Travel Food App/app/src/main/res/layout/activity_category.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Travel Food App/app/src/main/res/layout/activity_countries.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Travel Food App/app/src/main/res/layout/activity_country.xml" value="0.20416666666666666" />
-<<<<<<< HEAD
-=======
-        <entry key="..\:/Users/User/AndroidStudioProjects/Travel Food App/app/src/main/res/layout/activity_search.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/Travel Food App/app/src/main/res/layout/activity_view_pager_country_adapter.xml" value="0.20416666666666666" />
->>>>>>> 3ff18495a18847bde44cc26fdbdce0fad998610d
         <entry key="..\:/Users/User/AndroidStudioProjects/Travel Food App/app/src/main/res/layout/food_recipe_details.xml" value="0.19010416666666666" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Travel Food App/app/src/main/res/layout/fragment_category.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Travel Food App/app/src/main/res/layout/fragment_country.xml" value="0.19010416666666666" />
@@ -19,7 +14,6 @@
         <entry key="..\:/Users/User/AndroidStudioProjects/Travel Food App/app/src/main/res/layout/item_recycler_category_box.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Travel Food App/app/src/main/res/layout/item_recycler_country.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Travel Food App/app/src/main/res/layout/item_recycler_country_box.xml" value="0.19010416666666666" />
-<<<<<<< HEAD
         <entry key="..\:/Users/User/AndroidStudioProjects/Travel Food App/app/src/main/res/layout/item_view_pager_header.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/User/AndroidStudioProjects/Travel Food App/app/src/main/res/layout/item_view_pager_header_box.xml" value="0.20416666666666666" />
         <entry key="..\:/Users/user/Desktop/Travel Food App/app/src/main/res/drawable/ic_circle.xml" value="0.11197916666666667" />
@@ -35,6 +29,7 @@
         <entry key="..\:/Users/user/Desktop/Travel Food App/app/src/main/res/layout/activity_view_pager_country_adapter.xml" value="0.1" />
         <entry key="..\:/Users/user/Desktop/Travel Food App/app/src/main/res/layout/food_recipe_details.xml" value="0.12916666666666668" />
         <entry key="..\:/Users/user/Desktop/Travel Food App/app/src/main/res/layout/fragment_category.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/user/Desktop/Travel Food App/app/src/main/res/layout/fragment_country.xml" value="0.11684782608695653" />
         <entry key="..\:/Users/user/Desktop/Travel Food App/app/src/main/res/layout/home_page.xml" value="0.1" />
         <entry key="..\:/Users/user/Desktop/Travel Food App/app/src/main/res/layout/item_recycler_category.xml" value="0.1" />
         <entry key="..\:/Users/user/Desktop/Travel Food App/app/src/main/res/layout/item_recycler_category_box.xml" value="0.16666666666666666" />
@@ -43,11 +38,6 @@
         <entry key="..\:/Users/user/Desktop/Travel Food App/app/src/main/res/layout/item_view_pager_header.xml" value="0.12916666666666668" />
         <entry key="..\:/Users/user/Desktop/Travel Food App/app/src/main/res/layout/item_view_pager_header_box.xml" value="0.12916666666666668" />
         <entry key="..\:/Users/user/Desktop/Travel Food App/app/src/main/res/menu/favourite_menu.xml" value="0.184375" />
-=======
-        <entry key="..\:/Users/User/AndroidStudioProjects/Travel Food App/app/src/main/res/layout/item_recycler_food.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/Travel Food App/app/src/main/res/layout/item_view_pager_header.xml" value="0.20416666666666666" />
-        <entry key="..\:/Users/User/AndroidStudioProjects/Travel Food App/app/src/main/res/layout/item_view_pager_header_box.xml" value="0.20416666666666666" />
->>>>>>> 3ff18495a18847bde44cc26fdbdce0fad998610d
       </map>
     </option>
   </component>

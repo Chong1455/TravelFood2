@@ -1,18 +1,12 @@
 package com.utar.travelfood.adapter;
 
 import android.content.Context;
-<<<<<<< HEAD
 import android.media.Image;
-=======
->>>>>>> 3ff18495a18847bde44cc26fdbdce0fad998610d
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-<<<<<<< HEAD
 import android.widget.RelativeLayout;
-=======
->>>>>>> 3ff18495a18847bde44cc26fdbdce0fad998610d
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -21,10 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.utar.travelfood.R;
 import com.utar.travelfood.model.Meals;
 import com.squareup.picasso.Picasso;
-<<<<<<< HEAD
 import com.utar.travelfood.view.home.HomeActivity;
-=======
->>>>>>> 3ff18495a18847bde44cc26fdbdce0fad998610d
 
 import java.util.List;
 
@@ -51,7 +42,6 @@ public class RecyclerViewMealByCategory extends RecyclerView.Adapter<RecyclerVie
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerViewMealByCategory.RecyclerViewHolder viewHolder, int i) {
-<<<<<<< HEAD
         String strMealThumb = meals.get(i).getStrMealThumb();
         Picasso.get().load(strMealThumb).placeholder(R.drawable.shadow_bottom_to_top).into(viewHolder.mealThumb);
         String strMealName = meals.get(i).getStrMeal();
@@ -65,14 +55,6 @@ public class RecyclerViewMealByCategory extends RecyclerView.Adapter<RecyclerVie
                 }
             }
         }
-=======
-
-        String strMealThumb = meals.get(i).getStrMealThumb();
-        Picasso.get().load(strMealThumb).placeholder(R.drawable.shadow_bottom_to_top).into(viewHolder.mealThumb);
-
-        String strMealName = meals.get(i).getStrMeal();
-        viewHolder.mealName.setText(strMealName);
->>>>>>> 3ff18495a18847bde44cc26fdbdce0fad998610d
     }
 
     @Override
@@ -83,11 +65,9 @@ public class RecyclerViewMealByCategory extends RecyclerView.Adapter<RecyclerVie
     static class RecyclerViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         @BindView(R.id.mealThumb)
         ImageView mealThumb;
-<<<<<<< HEAD
         @BindView(R.id.love)
         ImageView love;
-=======
->>>>>>> 3ff18495a18847bde44cc26fdbdce0fad998610d
+
         @BindView(R.id.mealName)
         TextView mealName;
         RecyclerViewHolder(@NonNull View itemView) {

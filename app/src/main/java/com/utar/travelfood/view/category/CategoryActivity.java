@@ -27,11 +27,7 @@ public class CategoryActivity extends AppCompatActivity {
     TabLayout tabLayout;
     @BindView(R.id.viewPager)
     ViewPager viewPager;
-<<<<<<< HEAD
 
-=======
-    
->>>>>>> 3ff18495a18847bde44cc26fdbdce0fad998610d
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -43,7 +39,6 @@ public class CategoryActivity extends AppCompatActivity {
         
     }
 
-<<<<<<< HEAD
     // Reload the recycler view everytime the activity restarts to update favourite icon
     @Override
     public void onResume(){
@@ -53,18 +48,12 @@ public class CategoryActivity extends AppCompatActivity {
         initIntent();
     }
 
-=======
->>>>>>> 3ff18495a18847bde44cc26fdbdce0fad998610d
     private void initIntent() {
         Intent intent = getIntent();
         List<Categories.Category> categories =
                 (List<Categories.Category>) intent.getSerializableExtra(HomeActivity.EXTRA_CATEGORY);
         int position = intent.getIntExtra(HomeActivity.EXTRA_POSITION, 0);
-<<<<<<< HEAD
 
-=======
-        
->>>>>>> 3ff18495a18847bde44cc26fdbdce0fad998610d
         ViewPagerCategoryAdapter adapter = new ViewPagerCategoryAdapter(
                 getSupportFragmentManager(),
                 categories);

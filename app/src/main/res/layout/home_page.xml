@@ -19,24 +19,16 @@
         <RelativeLayout
             android:id="@+id/headerView"
             android:layout_width="match_parent"
-<<<<<<< HEAD
-            android:layout_height="300dp"
-=======
             android:layout_height="250dp"
->>>>>>> 3ff18495a18847bde44cc26fdbdce0fad998610d
             android:orientation="vertical">
 
             <View
                 android:layout_width="match_parent"
-<<<<<<< HEAD
                 android:layout_height="220dp"
                 android:background="@color/colorPrimary" />
-=======
                 android:layout_height="180dp"
                 android:id="@+id/View"
                 android:background="@color/colorPrimaryDark" />
->>>>>>> 3ff18495a18847bde44cc26fdbdce0fad998610d
-
             <!--title header-->
             <TextView
                 android:id="@+id/title"
@@ -59,11 +51,7 @@
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="15dp"
                 android:layout_marginRight="16dp"
-<<<<<<< HEAD
-                app:cardBackgroundColor="@color/colorPrimaryDark"
-=======
                 app:cardBackgroundColor="@color/colorPrimary"
->>>>>>> 3ff18495a18847bde44cc26fdbdce0fad998610d
                 app:cardCornerRadius="10dp"
                 app:cardElevation="0dp">
 
@@ -79,17 +67,11 @@
                 <ImageButton
                     android:id="@+id/imageButton"
                     android:layout_width="48dp"
-<<<<<<< HEAD
-                    android:layout_height="48dp"
-=======
                     android:layout_height="match_parent"
->>>>>>> 3ff18495a18847bde44cc26fdbdce0fad998610d
                     android:layout_gravity="right"
                     app:srcCompat="@drawable/ic_search" />
-
             </androidx.cardview.widget.CardView>
 
-<<<<<<< HEAD
             <!--view pager-->
             <androidx.viewpager.widget.ViewPager
                 android:id="@+id/viewPagerHeader"
@@ -106,18 +88,12 @@
                 android:id="@+id/shimmerMeal"
                 layout="@layout/item_view_pager_header_box" />
 
-=======
->>>>>>> 3ff18495a18847bde44cc26fdbdce0fad998610d
             <!--title of categories-->
             <TextView
                 android:id="@+id/titleCategory"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-<<<<<<< HEAD
                 android:layout_below="@id/viewPagerHeader"
-=======
-                android:layout_below="@id/View"
->>>>>>> 3ff18495a18847bde44cc26fdbdce0fad998610d
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginRight="16dp"
