@@ -144,15 +144,24 @@ public class DetailActivity extends AppCompatActivity implements DetailView{
                 FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
                 String uid = user.getUid();
 
-                // Add meal name to array
-                HomeActivity.favouriteFoodArray.add(mealName);
+                // Check if favourite array has the meal
+                if (HomeActivity.favouriteFoodArray.contains(mealName)) {
+                    // Remove meal from favourite array
+                    HomeActivity.favouriteFoodArray.remove(mealName);
 
-                // Add array to firebase
+                    // Set to favourite icon border
+                    item.setIcon(R.drawable.ic_favorite_border);
+
+                } else {
+                    // Add meal to favourite array
+                    HomeActivity.favouriteFoodArray.add(mealName);
+
+                    // Set to favourite icon
+                    item.setIcon(R.drawable.ic_favorite);
+                }
+                // Update favourite food in firebase
                 DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
-                mDatabase.child("users").child("favouriteFood").child(uid).setValue(HomeActivity.favouriteFoodArray);
-
-                // Set to favourite icon
-                item.setIcon(R.drawable.ic_favorite);
+                mDatabase.child("favouriteFood").child(uid).setValue(HomeActivity.favouriteFoodArray);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);

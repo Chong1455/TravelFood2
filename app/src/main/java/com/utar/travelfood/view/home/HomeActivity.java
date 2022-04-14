@@ -88,7 +88,7 @@ public class HomeActivity extends AppCompatActivity implements HomeView {
 
         // Read favourite food from firebase
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
-        mDatabase.child("users").child("favouriteFood").child(uid).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+        mDatabase.child("favouriteFood").child(uid).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
                 if (!task.isSuccessful()) {
