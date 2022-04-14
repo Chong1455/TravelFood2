@@ -1,10 +1,15 @@
 package com.utar.travelfood.view.detail;
 
 
+import android.util.Log;
+import android.widget.Toast;
+
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.utar.travelfood.Utils;
 import com.utar.travelfood.model.Meals;
+import com.utar.travelfood.view.home.HomeActivity;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -26,7 +31,7 @@ public class DetailPresenter {
                     @Override
                     public void onResponse(@NonNull Call<Meals> call, @NonNull Response<Meals> response) {
                         view.hideLoading();
-                        if (response.isSuccessful() && response.body() !=null){
+                        if (response.isSuccessful() && response.body() !=null && response.body().getMeals() != null){
                             view.setMeal(response.body().getMeals().get(0));
                         }else{
                             view.onErrorLoading(response.message());

@@ -6,6 +6,7 @@ import android.graphics.drawable.Drawable;
 
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -13,6 +14,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,6 +32,8 @@ import com.utar.travelfood.Utils;
 import com.utar.travelfood.model.Meals;
 import com.squareup.picasso.Picasso;
 import com.utar.travelfood.view.home.HomeActivity;
+import com.utar.travelfood.view.loginRegister.LoginActivity;
+import com.utar.travelfood.view.loginRegister.RegisterActivity;
 
 
 import butterknife.BindView;
@@ -126,7 +130,7 @@ public class DetailActivity extends AppCompatActivity implements DetailView{
         Drawable favoriteItemColor = favoriteItem.getIcon();
         setupColorActionBarIcon(favoriteItemColor);
         for (String food : HomeActivity.favouriteFoodArray) {
-            if (food.equals(mealName)) {
+            if (food.toLowerCase().equals(mealName.toLowerCase())) {
                 favoriteItem.setIcon(R.drawable.ic_favorite);
             }
         }
@@ -326,6 +330,8 @@ public class DetailActivity extends AppCompatActivity implements DetailView{
 
     @Override
     public void onErrorLoading(String message) {
-        Utils.showDialogMessage(this,"Error", message);
+        Intent intent = new Intent(this, HomeActivity.class);
+        startActivity(intent);
+        Toast.makeText(DetailActivity.this, "Cannot get meal", Toast.LENGTH_LONG).show();
     }
 }

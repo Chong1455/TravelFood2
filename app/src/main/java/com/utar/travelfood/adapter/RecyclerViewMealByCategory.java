@@ -50,7 +50,7 @@ public class RecyclerViewMealByCategory extends RecyclerView.Adapter<RecyclerVie
         if (HomeActivity.favouriteFoodArray.size() > 0) {
             // If meal name is in favouriteFoodArray, update the icon
             for (String food : HomeActivity.favouriteFoodArray) {
-                if (food.equals(meals.get(i).getStrMeal())) {
+                if (food.toLowerCase().equals(meals.get(i).getStrMeal().toLowerCase())) {
                     Picasso.get().load(R.drawable.ic_favorite).placeholder(R.drawable.ic_favorite).into(viewHolder.love);
                 }
             }
