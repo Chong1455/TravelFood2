@@ -35,7 +35,7 @@
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:background="#D9770202" />
+                        android:background="@color/colorPrimaryDark" />
 
                     <ImageView
                         android:id="@+id/imageCategory"
@@ -44,18 +44,19 @@
                         android:padding="16dp"
                         android:scaleType="fitStart"
                         android:src="@drawable/sample_food_photo" />
+
                     <TextView
                         android:id="@+id/textCategory"
-                        android:layout_toRightOf="@id/imageCategory"
-                        android:layout_toEndOf="@id/imageCategory"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="16dp"
-                        android:maxLines="7"
+                        android:layout_toEndOf="@id/imageCategory"
+                        android:layout_toRightOf="@id/imageCategory"
                         android:ellipsize="end"
-                        android:textColor="@color/colorWhite"
-                        android:textSize="15sp"
-                        android:text="@string/food_categories"/>
+                        android:maxLines="7"
+                        android:padding="16dp"
+                        android:text="@string/food_categories"
+                        android:textColor="@color/colorWhiteDark"
+                        android:textSize="15sp" />
                 </RelativeLayout>
             </androidx.cardview.widget.CardView>
             <androidx.recyclerview.widget.RecyclerView

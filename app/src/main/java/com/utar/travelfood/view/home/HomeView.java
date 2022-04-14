@@ -9,6 +9,5 @@ public interface HomeView {
     void showLoading();
     void hideLoading();
     void setCategory(List<Categories.Category> category);
-    void setCountry(List<Meals.Meal> country);
     void onErrorLoading(String message);
 }

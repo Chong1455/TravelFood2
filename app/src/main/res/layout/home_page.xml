@@ -24,11 +24,10 @@
 
             <View
                 android:layout_width="match_parent"
-                android:layout_height="220dp"
-                android:background="@color/colorPrimary" />
                 android:layout_height="180dp"
                 android:id="@+id/View"
                 android:background="@color/colorPrimaryDark" />
+
             <!--title header-->
             <TextView
                 android:id="@+id/title"
@@ -70,35 +69,20 @@
                     android:layout_height="match_parent"
                     android:layout_gravity="right"
                     app:srcCompat="@drawable/ic_search" />
+
             </androidx.cardview.widget.CardView>
-
-            <!--view pager-->
-            <androidx.viewpager.widget.ViewPager
-                android:id="@+id/viewPagerHeader"
-                android:layout_width="match_parent"
-                android:layout_height="150dp"
-                android:layout_below="@id/cardSearch"
-                android:layout_marginTop="10dp"
-                android:clipToPadding="false"
-                android:foregroundGravity="center"
-                android:overScrollMode="never" />
-
-            <!--box for recommendation-->
-            <include
-                android:id="@+id/shimmerMeal"
-                layout="@layout/item_view_pager_header_box" />
 
             <!--title of categories-->
             <TextView
                 android:id="@+id/titleCategory"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_below="@id/viewPagerHeader"
+                android:layout_below="@id/View"
                 android:layout_marginLeft="16dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginRight="16dp"
                 android:text="@string/food_categories"
-                android:textColor="@color/colorPrimary"
+                android:textColor="@color/colorPrimaryDark"
                 android:textSize="19sp"
                 android:textStyle="bold" />
 
@@ -119,33 +103,6 @@
             <include
                 android:id="@+id/shimmerCategory"
                 layout="@layout/item_recycler_category_box" />
-
-            <!--title of countries-->
-            <TextView
-                android:id="@+id/titleCountry"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/recyclerCategory"
-                android:layout_marginLeft="16dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginRight="16dp"
-                android:text="@string/country"
-                android:textColor="@color/colorPrimary"
-                android:textSize="19sp"
-                android:textStyle="bold" />
-
-            <!--recycle view-->
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerCountry"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_below="@id/titleCountry"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="8dp"
-                android:layout_marginBottom="50dp"
-                android:clipToPadding="false"
-                android:scrollbars="none" />
 
         </RelativeLayout>
     </androidx.core.widget.NestedScrollView>

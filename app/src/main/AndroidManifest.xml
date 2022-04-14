@@ -25,18 +25,6 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".adapter.RecyclerViewHome1Adapter"
-            android:exported="false" />
-        <activity
-            android:name=".model.Countries"
-            android:exported="false" />
-        <activity
-            android:name=".adapter.ViewPagerCountryAdapter"
-            android:exported="false" />
-        <activity
-            android:name=".view.country.CountryActivity"
-            android:exported="false" />
-        <activity
             android:name=".view.home.HomeActivity"
             android:theme="@style/AppTheme"/>
         <activity

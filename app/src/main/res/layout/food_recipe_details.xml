@@ -83,6 +83,8 @@
                             android:paddingLeft="14dp"
                             android:paddingRight="14dp"
                             android:paddingTop="14dp"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
                             android:textColor="@color/colorPrimaryDark"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" />
@@ -115,6 +117,8 @@
                             android:paddingLeft="14dp"
                             android:paddingRight="14dp"
                             android:paddingTop="14dp"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
                             android:textColor="@color/colorPrimaryDark"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content" />
@@ -144,10 +148,7 @@
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:textColor="@color/colorPrimaryDark"
-                android:gravity="center_vertical"
-                android:drawablePadding="10dp"
-                android:drawableEnd="@drawable/ic_info"
-                android:drawableRight="@drawable/ic_info" />
+                android:gravity="center_vertical" />
             
             <androidx.cardview.widget.CardView
                 app:cardUseCompatPadding="true"
@@ -186,6 +187,8 @@
                        android:paddingRight="14dp"
                        android:layout_marginTop="14dp"
                        android:text="@string/ingredients"
+                       android:textSize="16sp"
+                       android:textStyle="bold"
                        android:textColor="@color/colorPrimaryDark"
                        android:layout_width="match_parent"
                        android:layout_height="wrap_content" />

@@ -332,6 +332,6 @@ public class DetailActivity extends AppCompatActivity implements DetailView{
     public void onErrorLoading(String message) {
         Intent intent = new Intent(this, HomeActivity.class);
         startActivity(intent);
-        Toast.makeText(DetailActivity.this, "Cannot get meal", Toast.LENGTH_LONG).show();
+        Toast.makeText(DetailActivity.this, "The meal is not in the list.", Toast.LENGTH_LONG).show();
     }
 }

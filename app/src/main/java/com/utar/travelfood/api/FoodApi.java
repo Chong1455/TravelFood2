@@ -15,14 +15,8 @@ public interface FoodApi {
     @GET("categories.php")
     Call<Categories> getCategories();
 
-    @GET("list.php")
-    Call<Meals> getCountries(@Query("a") String list);
-
     @GET("filter.php") 
     Call<Meals> getMealByCategory(@Query("c") String category);
-
-    @GET("filter.php")
-    Call<Meals> getMealByCountry(@Query("a") String country);
 
     @GET("search.php")
     Call<Meals> getMealByName(@Query("s") String mealName);

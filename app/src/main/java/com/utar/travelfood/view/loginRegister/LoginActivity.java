@@ -42,6 +42,8 @@ public class LoginActivity extends AppCompatActivity {
 
         // Auto login
         sharedPreferences = this.getSharedPreferences("com.utar.travelfood", Context.MODE_PRIVATE);
+
+        sharedPreferences.edit().putBoolean("loginState", false).apply();
         if (sharedPreferences.getBoolean("loginState", false)) {
             Intent intent = new Intent(this, HomeActivity.class);
             startActivity(intent);

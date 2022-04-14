@@ -48,33 +48,4 @@ class HomePresenter {
             }
         });
     }
-
-    void getCountries() {
-
-        view.showLoading();
-
-        Call<Meals> countriesCall = Utils.getApi().getCountries("list");
-        countriesCall.enqueue(new Callback<Meals>() {
-            @Override
-            public void onResponse(@NonNull Call<Meals> call, @NonNull Response<Meals> response) {
-
-                view.hideLoading(); //hide loading when received response
-
-                if (response.isSuccessful() && response.body() != null) {
-
-                    view.setCountry(response.body().getMeals());
-
-                }
-                else {
-                    view.onErrorLoading(response.message());
-                }
-            }
-
-            @Override
-            public void onFailure(@NonNull Call<Meals> call, @NonNull Throwable t) {
-                view.hideLoading();
-                view.onErrorLoading(t.getLocalizedMessage());
-            }
-        });
-    }
 }
