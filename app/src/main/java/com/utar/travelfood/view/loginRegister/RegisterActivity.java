@@ -22,8 +22,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.utar.travelfood.R;
 
 public class RegisterActivity extends AppCompatActivity {
-
-
     EditText emailEditText;
     EditText passwordEditText;
     EditText cfmPasswordEditText;
@@ -72,14 +70,16 @@ public class RegisterActivity extends AppCompatActivity {
         } else if (!cfmpassword.equals(password)) { // check if retype password same as password
             cfmPasswordEditText.setError("Password must be the same!");
         } else { // register username and password in firebase
-            mAuth.createUserWithEmailAndPassword(emailEditText.getText().toString(), passwordEditText.getText().toString())
+            mAuth.createUserWithEmailAndPassword(emailEditText.getText().toString(),
+                    passwordEditText.getText().toString())
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) { // login successful
                                 performRegister();
                             } else { // login failed
-                                Toast.makeText(RegisterActivity.this, "Register failed. Try again!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(RegisterActivity.this,
+                                        "Register failed. Try again!", Toast.LENGTH_SHORT).show();
                             }
                         }
                     });

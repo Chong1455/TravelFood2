@@ -1,4 +1,3 @@
-
 package com.utar.travelfood.view.category;
 
 import static com.utar.travelfood.view.home.HomeActivity.EXTRA_DETAIL;

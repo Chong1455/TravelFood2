@@ -45,37 +45,26 @@ public class DetailActivity extends AppCompatActivity implements DetailView{
 
     @BindView(R.id.toolbar)
     Toolbar toolbar;
-
     @BindView(R.id.appbar)
     AppBarLayout appBarLayout;
-
     @BindView(R.id.collapsing_toolbar)
     CollapsingToolbarLayout collapsingToolbarLayout;
-
     @BindView(R.id.mealThumb)
     ImageView mealThumb;
-    
     @BindView(R.id.category)
     TextView category;
-    
     @BindView(R.id.country)
     TextView country;
-    
     @BindView(R.id.instructions)
     TextView instructions;
-
     @BindView(R.id.ingredient)
     TextView ingredients;
-    
     @BindView(R.id.measure)
     TextView measures;
-    
     @BindView(R.id.progressBar)
     ProgressBar progressBar;
-    
     @BindView(R.id.youtube)
     TextView youtube;
-    
     @BindView(R.id.source)
     TextView source;
 
@@ -108,15 +97,20 @@ public class DetailActivity extends AppCompatActivity implements DetailView{
 
     void setupColorActionBarIcon(Drawable favoriteItemColor) {
         appBarLayout.addOnOffsetChangedListener((appBarLayout, verticalOffset) -> {
-            if ((collapsingToolbarLayout.getHeight() + verticalOffset) < (2 * ViewCompat.getMinimumHeight(collapsingToolbarLayout))) {
+            if ((collapsingToolbarLayout.getHeight() + verticalOffset) <
+                    (2 * ViewCompat.getMinimumHeight(collapsingToolbarLayout))) {
                 if (toolbar.getNavigationIcon() != null)
-                    toolbar.getNavigationIcon().setColorFilter(getResources().getColor(R.color.colorPrimary), PorterDuff.Mode.SRC_ATOP);
+                    toolbar.getNavigationIcon().setColorFilter(
+                            getResources().getColor(R.color.colorPrimary), PorterDuff.Mode.SRC_ATOP
+                    );
                 favoriteItemColor.mutate().setColorFilter(getResources().getColor(R.color.colorPrimary),
                         PorterDuff.Mode.SRC_ATOP);
 
             } else {
                 if (toolbar.getNavigationIcon() != null)
-                    toolbar.getNavigationIcon().setColorFilter(getResources().getColor(R.color.colorWhite), PorterDuff.Mode.SRC_ATOP);
+                    toolbar.getNavigationIcon().setColorFilter(
+                            getResources().getColor(R.color.colorWhite), PorterDuff.Mode.SRC_ATOP
+                    );
                 favoriteItemColor.mutate().setColorFilter(getResources().getColor(R.color.colorWhite),
                         PorterDuff.Mode.SRC_ATOP);
             }
@@ -152,16 +146,18 @@ public class DetailActivity extends AppCompatActivity implements DetailView{
                 if (HomeActivity.favouriteFoodArray.contains(mealName)) {
                     // Remove meal from favourite array
                     HomeActivity.favouriteFoodArray.remove(mealName);
-
                     // Set to favourite icon border
                     item.setIcon(R.drawable.ic_favorite_border);
+                    //  Display toast message
+                    Toast.makeText(this, "Removed meal from favourites", Toast.LENGTH_SHORT).show();
 
                 } else {
                     // Add meal to favourite array
                     HomeActivity.favouriteFoodArray.add(mealName);
-
                     // Set to favourite icon
                     item.setIcon(R.drawable.ic_favorite);
+                    // Display toast message
+                    Toast.makeText(this, "Added meal to favourites", Toast.LENGTH_SHORT).show();
                 }
                 // Update favourite food in firebase
                 DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();

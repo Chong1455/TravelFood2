@@ -42,8 +42,6 @@ public class LoginActivity extends AppCompatActivity {
 
         // Auto login
         sharedPreferences = this.getSharedPreferences("com.utar.travelfood", Context.MODE_PRIVATE);
-
-        sharedPreferences.edit().putBoolean("loginState", false).apply();
         if (sharedPreferences.getBoolean("loginState", false)) {
             Intent intent = new Intent(this, HomeActivity.class);
             startActivity(intent);
@@ -79,14 +77,16 @@ public class LoginActivity extends AppCompatActivity {
         } else if (password.isEmpty()) { // check if password is empty
             passwordEditText.setError("Password must not be empty!");
         } else { // check if username and password exists in firebase
-            mAuth.signInWithEmailAndPassword(emailEditText.getText().toString(), passwordEditText.getText().toString())
+            mAuth.signInWithEmailAndPassword(emailEditText.getText().toString(),
+                    passwordEditText.getText().toString())
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()) { // login successful
                                 performLogin();
                             } else { // login failed
-                                Toast.makeText(LoginActivity.this, "Login failed. Try again!", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(LoginActivity.this,
+                                        "Login failed. Try again!", Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
@@ -100,11 +100,9 @@ public class LoginActivity extends AppCompatActivity {
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 editText.setError(null);
             }
-
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
             }
-
             @Override
             public void afterTextChanged(Editable editable) {
             }

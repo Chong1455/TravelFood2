@@ -1,6 +1,5 @@
 package com.utar.travelfood.view.category;
 
-
 import androidx.annotation.NonNull;
 
 import com.utar.travelfood.Utils;
@@ -12,13 +11,10 @@ import retrofit2.Response;
 
 public class CategoryPresenter {
     private CategoryView view;
-
     public CategoryPresenter(CategoryView view) {
         this.view = view;
     }
-    
     void getMealByCategory(String category) {
-        
         view.showLoading();
         Call<Meals> mealsCall = Utils.getApi().getMealByCategory(category);
         mealsCall.enqueue(new Callback<Meals>() {
@@ -31,13 +27,11 @@ public class CategoryPresenter {
                     view.onErrorLoading(response.message());
                 }
             }
-
             @Override
             public void onFailure(@NonNull Call<Meals> call,@NonNull Throwable t) {
                 view.hideLoading();
                 view.onErrorLoading(t.getLocalizedMessage());
             }
         });
-        
     }
 }

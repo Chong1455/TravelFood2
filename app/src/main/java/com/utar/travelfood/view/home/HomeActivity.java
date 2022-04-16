@@ -1,15 +1,15 @@
-/*-----------------------------------------------------------------------------
- - Developed by Haerul Muttaqin                                               -
- - Last modified 3/17/19 5:24 AM                                              -
- - Subscribe : https://www.youtube.com/haerulmuttaqin                         -
- - Copyright (c) 2019. All rights reserved                                    -
- -----------------------------------------------------------------------------*/
 package com.utar.travelfood.view.home;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 import androidx.annotation.NonNull;
@@ -37,6 +37,7 @@ import com.utar.travelfood.model.Categories;
 import com.utar.travelfood.model.Meals;
 import com.utar.travelfood.view.category.CategoryActivity;
 import com.utar.travelfood.view.detail.DetailActivity;
+import com.utar.travelfood.view.loginRegister.LoginActivity;
 
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -73,14 +74,14 @@ public class HomeActivity extends AppCompatActivity implements HomeView {
 
         // Read favourite food from firebase
         DatabaseReference mDatabase = FirebaseDatabase.getInstance().getReference();
-        mDatabase.child("favouriteFood").child(uid).get().addOnCompleteListener(new OnCompleteListener<DataSnapshot>() {
+        mDatabase.child("favouriteFood").child(uid).get().addOnCompleteListener(
+                new OnCompleteListener<DataSnapshot>() {
             @Override
             public void onComplete(@NonNull Task<DataSnapshot> task) {
                 if (!task.isSuccessful()) {
                     Log.e("firebase", "Error getting data", task.getException());
                 }
                 else {
-                    Log.i("firebase", String.valueOf(task.getResult().getValue()));
                     // Insert data from firebase into array
                     GenericTypeIndicator<ArrayList<String>> t = new GenericTypeIndicator<ArrayList<String>>() {};
                     if (task.getResult().getValue(t) != null) {
@@ -90,6 +91,7 @@ public class HomeActivity extends AppCompatActivity implements HomeView {
             }
         });
 
+        // Search function for users to find meal by entering meal name
         search = (ImageButton)findViewById(R.id.imageButton);
 
         search.setOnClickListener(new View.OnClickListener() {
@@ -105,6 +107,18 @@ public class HomeActivity extends AppCompatActivity implements HomeView {
 
         presenter = new HomePresenter(this);
         presenter.getCategories();
+
+        // Logout function to return users to login page
+        Button logoutButton = findViewById(R.id.logoutButton);
+        SharedPreferences sharedPreferences = this.getSharedPreferences("com.utar.travelfood", Context.MODE_PRIVATE);
+        logoutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                sharedPreferences.edit().putBoolean("loginState", false).apply();
+                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -117,6 +131,7 @@ public class HomeActivity extends AppCompatActivity implements HomeView {
         findViewById(R.id.shimmerCategory).setVisibility(View.GONE);
     }
 
+    // Filter by meal category
     @Override
     public void setCategory(List<Categories.Category> category) {
         RecyclerViewHomeAdapter homeAdapter = new RecyclerViewHomeAdapter(category, this);
@@ -139,5 +154,4 @@ public class HomeActivity extends AppCompatActivity implements HomeView {
     public void onErrorLoading(String message) {
         Utils.showDialogMessage(this, "Title", message);
     }
-
 }
